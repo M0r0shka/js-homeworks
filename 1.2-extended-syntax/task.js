@@ -12,15 +12,15 @@ function calculateQuadraticEquation(){
 
 function getResult(a,b,c){
     'use strict';
-    let D = Math.pow(b, 2) - 4 * a * c;
+    let d = Math.pow(b, 2) - 4 * a * c;
     let x = [];
     let x1, x2;
-    if (D === 0) {
-        x1 = (-b + Math.sqrt(D)) / (2 * a);
+    if (d === 0) {
+        x1 = (-b + Math.sqrt(d)) / (2 * a);
         x[0] = x1; 
-    }  else if (D > 0) {
-        x1 = (-b + Math.sqrt(D)) / (2 * a);
-        x2 = (-b - Math.sqrt(D)) / (2 * a);
+    }  else if (d > 0) {
+        x1 = (-b + Math.sqrt(d)) / (2 * a);
+        x2 = (-b - Math.sqrt(d)) / (2 * a);
         x[0] = x1;
         x[1] = x2;
     }
@@ -39,25 +39,14 @@ function getAverageMark(marks){
       console.log (`Количество оценок превышает 5, \nмассив [${marks}] будет сокращён до пяти элементов:`);
       marks.splice (5);
       console.log (marks);
-      summ = 0;
-      for (let i = 0; i < marks.length; i++) {
-        summ += marks[i];
-      }
-      averageMark = summ / marks.length;
-      console.log(`Ваш средний балл: ${averageMark}`);
-      return averageMark;
-    } else if (marks.length < 1) {
-      console.log(`У Вас нет оценок - средний балл рассчитать нельзя =)`);
-    } else {
-      summ = 0;
-      for (let i = 0; i < marks.length; i++) {
-        summ += marks[i];
-      }
-      averageMark = summ / marks.length;
-      console.log(`Ваш средний балл: ${averageMark}`);
-      return averageMark;
-    };
-  
+    } 
+    summ = 0;
+    for (let i = 0; i < marks.length; i++) {
+      summ += marks[i];
+    }
+    averageMark = summ / marks.length;
+    console.log(`Ваш средний балл: ${averageMark}`);
+    return averageMark;
 }
 
 function calculateDrinkTask(){
@@ -68,10 +57,7 @@ function calculateDrinkTask(){
 }
 
 function askDrink(name,dateOfBirthday){
-    let birthYear = dateOfBirthday.getFullYear();
-    let today = new Date();
-    let year = today.getFullYear();
-    let ageOfSubj = year - birthYear;
+    let ageOfSubj = new Date().getFullYear() - dateOfBirthday.getFullYear();
     if (ageOfSubj >= 18) {
         result = `Не желаете ли олд-фэшн, ${name}?`;
     } else {
