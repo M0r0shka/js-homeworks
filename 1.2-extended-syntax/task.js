@@ -1,4 +1,4 @@
-
+'use strict';
 
 function calculateQuadraticEquation(){
     let a = +window.a.value;
@@ -11,7 +11,6 @@ function calculateQuadraticEquation(){
 }
 
 function getResult(a,b,c){
-    'use strict';
     let d = Math.pow(b, 2) - 4 * a * c;
     let x = [];
     let x1, x2;
