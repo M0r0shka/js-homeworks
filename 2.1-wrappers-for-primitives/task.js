@@ -48,6 +48,11 @@ function sayHello() {
 }
 
 function getGreeting(name) {
+   const isValidName = !!name;
+   return `Привет, мир! Меня зовут ${isValidName ? name : 'Аноним'}`;
+}
+
+/*function getGreeting(name) {
   let greeting;
   if (name == !!0 || name == undefined) {
     greeting = `Привет мир! Меня зовут Аноним.`;
@@ -56,3 +61,4 @@ function getGreeting(name) {
     }
   return greeting;
 }
+*/
