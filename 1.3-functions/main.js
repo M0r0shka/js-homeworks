@@ -48,17 +48,33 @@ function getAverageScore(data) {
   for (let lesson in data) {
     let sum = 0;
     let value = 0;
-    
-    for (let i = 0; i < data[lesson].length; i++) {
-      sum += data[lesson][i];
+
+    function getAverageLesson(data) {
+      for (let i = 0; i < data[lesson].length; i++) {
+        sum += data[lesson][i];
+      }
+      value = sum / data[lesson].length;
+      averageValue[lesson] = value;
+      totalValue += value;
+      count++;
+      average = totalValue / count;
+      return average;
     }
-    value = sum / data[lesson].length;
-    averageValue[lesson] = value;
-    totalValue += value;
-    count++;
-    average = totalValue / count;
-  };
-  
+
+    getAverageLesson({
+	    algebra: [4, 4, 5, 4, 3, 4],
+	    geometry: [3, 4, 5],
+	    russian: [3, 3, 4, 5],
+	    physics: [5, 5, 5],
+	    music: [2, 2, 4],
+	    english: [4, 4, 3],
+	    poetry: [5, 4, 3, 4],
+	    chemistry: [5, 5, 5],
+	    french: [2, 2],
+	    programming: [5, 5, 4, 4]
+    });
+  }
+
   averageValue.average = average;
   return averageValue;
 };
