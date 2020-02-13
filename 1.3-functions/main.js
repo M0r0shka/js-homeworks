@@ -68,7 +68,7 @@ function getAverageScore(data) {
   return averageValue;
 };
 
-getAverageScore({
+console.log(getAverageScore({
 	algebra: [4, 4, 5, 4, 3, 4],
 	geometry: [3, 4, 5],
 	russian: [3, 3, 4, 5],
@@ -79,7 +79,7 @@ getAverageScore({
 	chemistry: [5, 5, 5],
 	french: [2, 2],
 	programming: [5, 5, 4, 4]
-});	
+}));	
 
 
 // Задача 3
