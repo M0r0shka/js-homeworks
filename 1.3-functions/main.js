@@ -61,25 +61,14 @@ function getAverageScore(data) {
       return average;
     }
 
-    getAverageLesson({
-	    algebra: [4, 4, 5, 4, 3, 4],
-	    geometry: [3, 4, 5],
-	    russian: [3, 3, 4, 5],
-	    physics: [5, 5, 5],
-	    music: [2, 2, 4],
-	    english: [4, 4, 3],
-	    poetry: [5, 4, 3, 4],
-	    chemistry: [5, 5, 5],
-	    french: [2, 2],
-	    programming: [5, 5, 4, 4]
-    });
+    getAverageLesson(data);
   }
 
   averageValue.average = average;
   return averageValue;
 };
 
- console.log(getAverageScore({
+getAverageScore({
 	algebra: [4, 4, 5, 4, 3, 4],
 	geometry: [3, 4, 5],
 	russian: [3, 3, 4, 5],
@@ -90,7 +79,7 @@ function getAverageScore(data) {
 	chemistry: [5, 5, 5],
 	french: [2, 2],
 	programming: [5, 5, 4, 4]
-}));	
+});	
 
 
 // Задача 3
