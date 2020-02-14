@@ -42,26 +42,24 @@ showSolutionMessage(2, 4, 2);
 
 // Задача 2
 function getAverageScore(data) {
-  let value, totalValue = 0, average = 0, count = 0;
+  let value = 0, totalValue = 0, average = 0, count = 0;
   let averageValue = {};
 
   for (let lesson in data) {
+    getAverageLesson(data[lesson]);
+    averageValue[lesson] = value;
+    totalValue += value;
+    count++;
+    average = totalValue / count;
+  }
+
+  function getAverageLesson(data) {
     let sum = 0;
-    let value = 0;
-
-    function getAverageLesson(data) {
-      for (let i = 0; i < data[lesson].length; i++) {
-        sum += data[lesson][i];
-      }
-      value = sum / data[lesson].length;
-      averageValue[lesson] = value;
-      totalValue += value;
-      count++;
-      average = totalValue / count;
-      return average;
+    for (let i = 0; i < data.length; i++) {
+      sum += data[i];
     }
-
-    getAverageLesson(data);
+    value = sum / data.length;
+    return value;
   }
 
   averageValue.average = average;
@@ -80,7 +78,6 @@ console.log(getAverageScore({
 	french: [2, 2],
 	programming: [5, 5, 4, 4]
 }));	
-
 
 // Задача 3
 function getPersonData(secretData) { 
